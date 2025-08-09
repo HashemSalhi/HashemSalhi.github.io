@@ -30,7 +30,7 @@ flag format: `NCSC{IP:PORT}`
 
 Just by quickly analyzing the `Operation-Mittens.pcapng` file in **Wireshark**, we can see that all the `HTTP` requests are `POST` requests. This is unusual and immediately suspicious. By inspecting these `POST` requests, we can identify the destination IP address and port used by the attacker, revealing their C2 endpoint.
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\1.png)
+![Screenshot](/images/CyberWarriorsCTF2025/1.png)
 ### Stage2
 
 Can you retrieve the UUID that the malware is using to talk to the C2 server?
@@ -41,11 +41,11 @@ flag format: `NCSC{UUID}`
 
 By inspecting any of the HTTP `POST` requests, we notice that the body contains a base64-encoded blob. 
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\2.png)
+![Screenshot](/images/CyberWarriorsCTF2025/2.png)
 
 Decoding this blob reveals that the first portion is the **UUID** used by the malware to identify the victim or session.
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\3.png)
+![Screenshot](/images/CyberWarriorsCTF2025/3.png)
 
 ### Stage3
 
@@ -107,12 +107,12 @@ print(decrypt_payload(aes_key, agent_payload))
 print("\n")
 print(decrypt_payload(aes_key, c2_response))
 ```
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\4.png)
+![Screenshot](/images/CyberWarriorsCTF2025/4.png)
 
 Now we can go on and start decrypting the traffic one by one to explore what was attacker doing
 
 When decrypting tcp.stream 16 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\5.png)
+![Screenshot](/images/CyberWarriorsCTF2025/5.png)
 We get the following 
 
 ```json
@@ -157,16 +157,16 @@ The attacker attempted to take a screenshot and download it, in tcp.stream 17 we
 ```
 The first chunk is in tcp.stream 18  
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\6.png)
+![Screenshot](/images/CyberWarriorsCTF2025/6.png)
 
 Let's decode the `chunk_data` 
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\7.png)
+![Screenshot](/images/CyberWarriorsCTF2025/7.png)
 
 We got the first chunk of the screenshot :)
 I'll repeat the same steps for the rest chunks which are in tcp.stream 20, 23, 24
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\screenshot.png)
+![Screenshot](/images/CyberWarriorsCTF2025/screenshot.png)
 
 And we get the flag at the bottom of the note.
 
@@ -220,15 +220,15 @@ We believe the attacker stole information and exfiltrated it, we need you to ide
 
 In tcp.stream 112, 121, 142 the attack copied some interesting files which are the (`Cookies`, `History`, `login.keychain-db`) into the `/Users/test/loot/` directory
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\8.png)
+![Screenshot](/images/CyberWarriorsCTF2025/8.png)
 
 Then in tcp.stream 156, the attacker zipped the `loot` directory into `loot.zip`
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\9.png)
+![Screenshot](/images/CyberWarriorsCTF2025/9.png)
 
 And we can find the password entered in tcp.stream 158
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\10.png)
+![Screenshot](/images/CyberWarriorsCTF2025/10.png)
 
 In tcp.stream 171 the attacker downloaded the file `loot.zip`
 
@@ -255,15 +255,15 @@ In tcp.stream 171 the attacker downloaded the file `loot.zip`
 }
 ```
 Luckily it's not fragmented. We can see the file in tcp.stream 172
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\11.png)
+![Screenshot](/images/CyberWarriorsCTF2025/11.png)
 
 Decode the `chunk_data` to get the file 
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\12.png)
+![Screenshot](/images/CyberWarriorsCTF2025/12.png)
 
 And inside the `note.txt` we'll find our flag
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\13.png)
+![Screenshot](/images/CyberWarriorsCTF2025/13.png)
 
 
 ### Stage7
@@ -285,15 +285,15 @@ This is from chainbreaker repository:
 
 So ill use to parse and decrypt macOS `login.keychain-db`
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\14.png)
+![Screenshot](/images/CyberWarriorsCTF2025/14.png)
 
 We are only intrested in the **Chrome Safe Storage** because the user used chrome to browse *pastebin.com*
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\15.png)
+![Screenshot](/images/CyberWarriorsCTF2025/15.png)
 
 Then we will use another tool called [macCookies](https://github.com/kawakatz/macCookies) to decrypt the cookies blobs using the password from the **Chrome Safe Storage**.
 
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\16.png)
+![Screenshot](/images/CyberWarriorsCTF2025/16.png)
 
 ### Stage8
 
@@ -323,7 +323,7 @@ In tcp.stream 179 the attacker performed an upload operation
 The attacker uploaded a file called `com.apple.Finder.plist` which normally saves your the user's Finder settings like window layouts, sidebar items, view preferences, etc..
 
 Let's view its content which is in tcp.stream 181
-![Screenshot](..\\images\\CyberWarriorsCTF2025\\17.png)
+![Screenshot](/images/CyberWarriorsCTF2025/17.png)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
