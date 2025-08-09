@@ -164,7 +164,7 @@ Let's decode the `chunk_data`
 ![Screenshot](/images/CyberWarriorsCTF2025/7.png)
 
 We got the first chunk of the screenshot :)
-I'll repeat the same steps for the rest chunks which are in tcp.stream 20, 23, 24
+I'll repeat the same steps for the rest of the chunks which are in tcp.stream 20, 23, 24
 
 ![Screenshot](/images/CyberWarriorsCTF2025/screenshot.png)
 
@@ -218,7 +218,7 @@ We believe the attacker stole information and exfiltrated it, we need you to ide
 
 ---
 
-In tcp.stream 112, 121, 142 the attack copied some interesting files which are the (`Cookies`, `History`, `login.keychain-db`) into the `/Users/test/loot/` directory
+In tcp.stream 112, 121, 142 the attacker copied some interesting files which are the (`Cookies`, `History`, `login.keychain-db`) into the `/Users/test/loot/` directory
 
 ![Screenshot](/images/CyberWarriorsCTF2025/8.png)
 
@@ -283,7 +283,7 @@ I'll use [chainbreaker](https://github.com/n0fate/chainbreaker).
 This is from chainbreaker repository:
 > Chainbreaker can be used to extract the following types of information from an OSX keychain in a forensically sound manner: Hashed Keychain password, suitable for cracking with hashcat or John the Ripper, Internet Passwords, Generic Passwords, Private Keys, Public Keys, X509 Certificates, Secure Notes, Appleshare Passwords.
 
-So ill use to parse and decrypt macOS `login.keychain-db`
+So I'll use to parse and decrypt macOS `login.keychain-db`
 
 ![Screenshot](/images/CyberWarriorsCTF2025/14.png)
 
@@ -320,7 +320,7 @@ In tcp.stream 179 the attacker performed an upload operation
   ]
 }
 ```
-The attacker uploaded a file called `com.apple.Finder.plist` which normally saves your the user's Finder settings like window layouts, sidebar items, view preferences, etc..
+The attacker uploaded a file called `com.apple.Finder.plist` which normally saves the user's Finder settings like window layouts, sidebar items, view preferences, etc..
 
 Let's view its content which is in tcp.stream 181
 ![Screenshot](/images/CyberWarriorsCTF2025/17.png)
@@ -348,8 +348,10 @@ Let's view its content which is in tcp.stream 181
 </plist>
 ```
 
-In macOS, **LaunchAgents** are `plist` configuration files that tell the launchd service to automatically run specific programs or scripts for a user, often at login, at set intervals, or in response to certain events; while legitimate apps use them for background services, they can be abused as a persistence mechanism so the attcker code restarts even after reboots or logouts
+In macOS, **LaunchAgents** are `plist` configuration files that tell the launchd service to automatically run specific programs or scripts for a user, often at login, at set intervals, or in response to certain events; while legitimate apps use them for background services, they can be abused as a persistence mechanism so the attacker code restarts even after reboots or logouts
 
 The `com.apple.Finder.plist` file that was uploaded by the attacker creates a job named `com.persist.user` that immediately runs and then re-runs every **60 seconds**, executing `/bin/zsh -c "/Users/test/Applications"`.
 
 > NCSC{Launch_Agents:com.apple.Finder.plist}
+
+I first blooded this challenge and got a cool animation on the screen :)
