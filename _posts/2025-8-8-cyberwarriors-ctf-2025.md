@@ -362,4 +362,5 @@ The `com.apple.Finder.plist` file that was uploaded by the attacker creates a jo
 
 I first blooded this challenge and got a cool animation on the screen :)
 
+![Screenshot](/images/CyberWarriorsCTF2025/18.png)
 
