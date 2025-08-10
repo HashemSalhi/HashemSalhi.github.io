@@ -366,5 +366,7 @@ I first blooded this challenge and got a cool animation on the screen :)
 
 ![Screenshot](/images/CyberWarriorsCTF2025/18.png)
 
+Shoutout to my friend **mrfa3i** for building this awesome tool that automatically decrypts the traffic.
+[Link](https://github.com/mrfa3i/poseidon-mythic-c2-extractor)
 
 
