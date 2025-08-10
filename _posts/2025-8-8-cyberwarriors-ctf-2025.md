@@ -283,11 +283,11 @@ I'll use [chainbreaker](https://github.com/n0fate/chainbreaker).
 This is from chainbreaker repository:
 > Chainbreaker can be used to extract the following types of information from an OSX keychain in a forensically sound manner: Hashed Keychain password, suitable for cracking with hashcat or John the Ripper, Internet Passwords, Generic Passwords, Private Keys, Public Keys, X509 Certificates, Secure Notes, Appleshare Passwords.
 
-So I'll use to parse and decrypt macOS `login.keychain-db`
+So I'll use it to parse and decrypt macOS `login.keychain-db`
 
 ![Screenshot](/images/CyberWarriorsCTF2025/14.png)
 
-We are only intrested in the **Chrome Safe Storage** because the user used chrome to browse *pastebin.com*
+We are only interested in the **Chrome Safe Storage** because the user used chrome to browse *pastebin.com*
 
 ![Screenshot](/images/CyberWarriorsCTF2025/15.png)
 
@@ -355,3 +355,4 @@ The `com.apple.Finder.plist` file that was uploaded by the attacker creates a jo
 > NCSC{Launch_Agents:com.apple.Finder.plist}
 
 I first blooded this challenge and got a cool animation on the screen :)
+
