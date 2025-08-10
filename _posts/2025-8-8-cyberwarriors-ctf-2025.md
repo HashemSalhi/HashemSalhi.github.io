@@ -33,6 +33,7 @@ Just by quickly analyzing the `Operation-Mittens.pcapng` file in **Wireshark**, 
 ![Screenshot](/images/CyberWarriorsCTF2025/1.png)
 
 > NCSC{192.168.0.104:80}
+
 ### Stage2
 
 Can you retrieve the UUID that the malware is using to talk to the C2 server?
@@ -363,4 +364,5 @@ The `com.apple.Finder.plist` file that was uploaded by the attacker creates a jo
 I first blooded this challenge and got a cool animation on the screen :)
 
 ![Screenshot](/images/CyberWarriorsCTF2025/18.png)
+
 
