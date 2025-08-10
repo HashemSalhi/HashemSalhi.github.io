@@ -217,7 +217,7 @@ And we can see the password in tcp.stream 80
   ]
 }
 ```
-NCSC{Uncrackable#1337}
+> NCSC{Uncrackable#1337}
 
 ### Stage6
 
@@ -272,6 +272,7 @@ And inside the `note.txt` we'll find our flag
 
 ![Screenshot](/images/CyberWarriorsCTF2025/13.png)
 
+> NCSC{D47A_3Xf1lTrAti0n_1s_Cruc1aL!}
 
 ### Stage7
 
@@ -364,5 +365,6 @@ The `com.apple.Finder.plist` file that was uploaded by the attacker creates a jo
 I first blooded this challenge and got a cool animation on the screen :)
 
 ![Screenshot](/images/CyberWarriorsCTF2025/18.png)
+
 
 
