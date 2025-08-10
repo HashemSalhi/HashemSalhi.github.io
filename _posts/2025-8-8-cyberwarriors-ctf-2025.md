@@ -31,6 +31,8 @@ flag format: `NCSC{IP:PORT}`
 Just by quickly analyzing the `Operation-Mittens.pcapng` file in **Wireshark**, we can see that all the `HTTP` requests are `POST` requests. This is unusual and immediately suspicious. By inspecting these `POST` requests, we can identify the destination IP address and port used by the attacker, revealing their C2 endpoint.
 
 ![Screenshot](/images/CyberWarriorsCTF2025/1.png)
+
+> NCSC{192.168.0.104:80}
 ### Stage2
 
 Can you retrieve the UUID that the malware is using to talk to the C2 server?
@@ -46,6 +48,8 @@ By inspecting any of the HTTP `POST` requests, we notice that the body contains 
 Decoding this blob reveals that the first portion is the **UUID** used by the malware to identify the victim or session.
 
 ![Screenshot](/images/CyberWarriorsCTF2025/3.png)
+
+> NCSC{aeade7f5-aa14-46fc-9e1c-af1d1412f7b8}
 
 ### Stage3
 
@@ -170,6 +174,8 @@ I'll repeat the same steps for the rest of the chunks which are in tcp.stream 20
 
 And we get the flag at the bottom of the note.
 
+> NCSC{ScR3ENSh07S_4R3_C0Ol}
+
 ### Stage5
 
 Was the attacker able to steal the CEO's password?
@@ -210,7 +216,7 @@ And we can see the password in tcp.stream 80
   ]
 }
 ```
-**Uncrackable#1337**
+NCSC{Uncrackable#1337}
 
 ### Stage6
 
@@ -355,4 +361,5 @@ The `com.apple.Finder.plist` file that was uploaded by the attacker creates a jo
 > NCSC{Launch_Agents:com.apple.Finder.plist}
 
 I first blooded this challenge and got a cool animation on the screen :)
+
 
