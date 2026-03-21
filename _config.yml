@@ -29,7 +29,7 @@ github:
   username: HashemSalhi # change to your GitHub username
 
 twitter:
-  username: SalhiHashem # change to your Twitter username
+  username: hashemalsalhi # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -37,7 +37,7 @@ social:
   name: C3TUS
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/SalhiHashem # change to your Twitter homepage
+    - https://x.com/hashemalsalhi # change to your Twitter homepage
     - https://github.com/HashemSalhi # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
