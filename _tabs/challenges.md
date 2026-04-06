@@ -30,6 +30,8 @@ order: 4
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 .challenge-badges .badge {
   font-size: 0.78rem;
@@ -41,6 +43,33 @@ order: 4
 .badge-medium { background-color: #e67e22; color: #fff; }
 .badge-hard { background-color: #e74c3c; color: #fff; }
 .badge-category { background-color: var(--badge-color, #6c757d); color: #fff; }
+.badge-solves {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.3em 0.65em;
+  border-radius: 0.4rem;
+  background-color: rgba(100, 149, 237, 0.15);
+  color: var(--link-color, #6495ed);
+  border: 1px solid rgba(100, 149, 237, 0.3);
+}
+.challenge-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+.star-rating {
+  display: inline-flex;
+  gap: 0.1em;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+.star-rating .star-filled { color: #f1c40f; }
+.star-rating .star-empty  { color: rgba(134, 140, 151, 0.4); }
 .challenge-link {
   flex-shrink: 0;
 }
@@ -77,6 +106,16 @@ Challenges I've authored on [HackTheBox](https://www.hackthebox.com){:target="_b
       <span class="badge badge-medium">Medium</span>
       <span class="badge badge-category">Hardware</span>
     </div>
+    <div class="challenge-meta">
+      <span class="badge-solves"><i class="fas fa-users"></i> 167 Solves</span>
+      <span class="star-rating">
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-empty"></i>
+      </span>
+    </div>
   </div>
   <div class="challenge-link">
     <a href="https://app.hackthebox.com/challenges/Defusal" target="_blank" rel="noopener">
@@ -92,6 +131,16 @@ Challenges I've authored on [HackTheBox](https://www.hackthebox.com){:target="_b
       <span class="badge badge-easy">Easy</span>
       <span class="badge badge-category">Reverse Engineering</span>
     </div>
+    <div class="challenge-meta">
+      <span class="badge-solves"><i class="fas fa-users"></i> 312 Solves</span>
+      <span class="star-rating">
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-filled"></i>
+      </span>
+    </div>
   </div>
   <div class="challenge-link">
     <a href="https://app.hackthebox.com/challenges/Hubbub" target="_blank" rel="noopener">
@@ -106,6 +155,16 @@ Challenges I've authored on [HackTheBox](https://www.hackthebox.com){:target="_b
     <div class="challenge-badges">
       <span class="badge badge-medium">Medium</span>
       <span class="badge badge-category">DFIR Sherlock</span>
+    </div>
+    <div class="challenge-meta">
+      <span class="badge-solves"><i class="fas fa-users"></i> 89 Solves</span>
+      <span class="star-rating">
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-filled"></i>
+        <i class="fas fa-star star-empty"></i>
+      </span>
     </div>
   </div>
   <div class="challenge-link">
