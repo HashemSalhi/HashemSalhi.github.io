@@ -130,34 +130,34 @@ order: 5
 
 <div class="cert-grid">
 
-  <a class="cert-card" href="#" target="_blank" rel="noopener" title="CCDL2">
+  <a class="cert-card" href="https://www.credly.com/badges/ac5b88a1-7238-4682-b56d-3cb65f438fef/public_url" target="_blank" rel="noopener" title="CCDL2">
     <div class="cert-img-wrap">
       <i class="fas fa-shield-alt cert-img-placeholder"></i>
     </div>
     <div class="cert-name">CCDL2</div>
-    <div class="cert-issuer"><!-- Issuer --></div>
+    <div class="cert-issuer">Credly</div>
     <span class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</span>
   </a>
 
-  <a class="cert-card" href="#" target="_blank" rel="noopener" title="eCIR">
+  <a class="cert-card" href="https://certs.ine.com/04d7c750-2621-4dd9-a7da-49e6ad5d3576" target="_blank" rel="noopener" title="eCIR">
     <div class="cert-img-wrap">
       <i class="fas fa-shield-alt cert-img-placeholder"></i>
     </div>
     <div class="cert-name">eCIR</div>
-    <div class="cert-issuer">eLearnSecurity</div>
+    <div class="cert-issuer">INE Security</div>
     <span class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</span>
   </a>
 
-  <a class="cert-card" href="#" target="_blank" rel="noopener" title="eCTHP">
+  <a class="cert-card" href="https://certs.ine.com/69c38171-31cb-47a8-80cf-00b9abed1b18" target="_blank" rel="noopener" title="eCTHP">
     <div class="cert-img-wrap">
       <i class="fas fa-shield-alt cert-img-placeholder"></i>
     </div>
     <div class="cert-name">eCTHP</div>
-    <div class="cert-issuer">eLearnSecurity</div>
+    <div class="cert-issuer">INE Security</div>
     <span class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</span>
   </a>
 
-  <a class="cert-card" href="#" target="_blank" rel="noopener" title="CRTP">
+  <a class="cert-card" href="https://www.credential.net/b26d244a-ae9a-47fc-bbf1-06f86bdac127" target="_blank" rel="noopener" title="CRTP">
     <div class="cert-img-wrap">
       <i class="fas fa-shield-alt cert-img-placeholder"></i>
     </div>
@@ -166,12 +166,12 @@ order: 5
     <span class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</span>
   </a>
 
-  <a class="cert-card" href="#" target="_blank" rel="noopener" title="eJPT">
+  <a class="cert-card" href="https://www.credential.net/3a82f4b5-4d53-40eb-8264-0314a8a6cfcd" target="_blank" rel="noopener" title="eJPT">
     <div class="cert-img-wrap">
       <i class="fas fa-shield-alt cert-img-placeholder"></i>
     </div>
     <div class="cert-name">eJPT</div>
-    <div class="cert-issuer">eLearnSecurity</div>
+    <div class="cert-issuer">INE Security</div>
     <span class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</span>
   </a>
 
