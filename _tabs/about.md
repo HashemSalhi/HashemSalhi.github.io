@@ -30,9 +30,8 @@ order: 5
 /* ── Cert grid ── */
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.1rem;
 }
 
 /* ── Cert card ── */
@@ -40,87 +39,101 @@ order: 5
   position: relative;
   border: 1px solid var(--card-border-color, rgba(134,140,151,0.15));
   border-radius: 0.75rem;
-  padding: 1.25rem 1rem 1rem;
   background: var(--card-bg, var(--main-bg));
+  overflow: hidden;
+  text-decoration: none !important;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  overflow: hidden;
-}
-.cert-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #9fef00, #00c8f8);
-  opacity: 0;
-  transition: opacity 0.2s ease;
 }
 .cert-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  border-color: rgba(159,239,0,0.3);
-}
-.cert-card:hover::before {
-  opacity: 1;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.13);
+  border-color: rgba(159,239,0,0.35);
 }
 
-/* ── Badge image placeholder ── */
-.cert-img-wrap {
-  width: 80px;
-  height: 80px;
-  border-radius: 0.5rem;
+/* ── Certificate image preview ── */
+.cert-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 600 / 464;
   overflow: hidden;
+  background: rgba(134,140,151,0.06);
+}
+.cert-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.35s ease;
+  display: block;
+}
+.cert-card:hover .cert-preview img {
+  transform: scale(1.04);
+}
+
+/* ── Overlay on hover ── */
+.cert-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(159,239,0,0.06);
-  border: 1px solid rgba(159,239,0,0.15);
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
-.cert-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 6px;
+.cert-card:hover .cert-overlay {
+  opacity: 1;
 }
-.cert-img-placeholder {
-  font-size: 2rem;
-  color: rgba(159,239,0,0.4);
-}
-
-/* ── Cert name ── */
-.cert-name {
+.cert-overlay span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 0.82rem;
   font-weight: 700;
-  text-align: center;
+  color: #9fef00;
+  border: 1px solid rgba(159,239,0,0.5);
+  background: rgba(0,0,0,0.5);
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(4px);
+}
+
+/* ── Card footer ── */
+.cert-footer {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--card-border-color, rgba(134,140,151,0.15));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cert-name {
+  font-size: 0.88rem;
+  font-weight: 700;
   color: var(--heading-color, inherit);
-  line-height: 1.3;
 }
 .cert-issuer {
   font-size: 0.7rem;
   color: var(--text-muted, #868c97);
-  text-align: center;
 }
-
-/* ── "Verify" label ── */
-.cert-verify {
-  font-size: 0.68rem;
-  color: #9fef00;
-  display: flex;
+.cert-badge-label {
+  display: inline-flex;
   align-items: center;
   gap: 0.25em;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.cert-card:hover .cert-verify {
-  opacity: 1;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #9fef00;
+  background: rgba(159,239,0,0.08);
+  border: 1px solid rgba(159,239,0,0.2);
+  padding: 0.2em 0.55em;
+  border-radius: 0.3rem;
+  white-space: nowrap;
 }
 
 @media (max-width: 480px) {
-  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+  .cert-grid { grid-template-columns: 1fr; }
 }
 </style>
 
@@ -130,49 +143,74 @@ order: 5
 
 <div class="cert-grid">
 
-  <a class="cert-card" href="https://www.credly.com/badges/ac5b88a1-7238-4682-b56d-3cb65f438fef/public_url" target="_blank" rel="noopener" title="CCDL2">
-    <div class="cert-img-wrap">
-      <i class="fas fa-shield-alt cert-img-placeholder"></i>
+  <a class="cert-card" href="https://www.credly.com/badges/ac5b88a1-7238-4682-b56d-3cb65f438fef/public_url" target="_blank" rel="noopener">
+    <div class="cert-preview">
+      <img src="/assets/img/certs/CCDL2.png" alt="CCDL2 Certificate" loading="lazy">
+      <div class="cert-overlay"><span><i class="fas fa-external-link-alt"></i> Verify</span></div>
     </div>
-    <div class="cert-name">CCDL2</div>
-    <div class="cert-issuer">Credly</div>
-    <span class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</span>
+    <div class="cert-footer">
+      <div>
+        <div class="cert-name">CCDL2</div>
+        <div class="cert-issuer">CyberDefenders</div>
+      </div>
+      <span class="cert-badge-label"><i class="fas fa-check-circle"></i> Verified</span>
+    </div>
   </a>
 
-  <a class="cert-card" href="https://certs.ine.com/04d7c750-2621-4dd9-a7da-49e6ad5d3576" target="_blank" rel="noopener" title="eCIR">
-    <div class="cert-img-wrap">
-      <i class="fas fa-shield-alt cert-img-placeholder"></i>
+  <a class="cert-card" href="https://certs.ine.com/04d7c750-2621-4dd9-a7da-49e6ad5d3576" target="_blank" rel="noopener">
+    <div class="cert-preview">
+      <img src="/assets/img/certs/eCIR.png" alt="eCIR Certificate" loading="lazy">
+      <div class="cert-overlay"><span><i class="fas fa-external-link-alt"></i> Verify</span></div>
     </div>
-    <div class="cert-name">eCIR</div>
-    <div class="cert-issuer">INE Security</div>
-    <span class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</span>
+    <div class="cert-footer">
+      <div>
+        <div class="cert-name">eCIR</div>
+        <div class="cert-issuer">INE Security</div>
+      </div>
+      <span class="cert-badge-label"><i class="fas fa-check-circle"></i> Verified</span>
+    </div>
   </a>
 
-  <a class="cert-card" href="https://certs.ine.com/69c38171-31cb-47a8-80cf-00b9abed1b18" target="_blank" rel="noopener" title="eCTHP">
-    <div class="cert-img-wrap">
-      <i class="fas fa-shield-alt cert-img-placeholder"></i>
+  <a class="cert-card" href="https://certs.ine.com/69c38171-31cb-47a8-80cf-00b9abed1b18" target="_blank" rel="noopener">
+    <div class="cert-preview">
+      <img src="/assets/img/certs/eCTHP.png" alt="eCTHP Certificate" loading="lazy">
+      <div class="cert-overlay"><span><i class="fas fa-external-link-alt"></i> Verify</span></div>
     </div>
-    <div class="cert-name">eCTHP</div>
-    <div class="cert-issuer">INE Security</div>
-    <span class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</span>
+    <div class="cert-footer">
+      <div>
+        <div class="cert-name">eCTHP</div>
+        <div class="cert-issuer">INE Security</div>
+      </div>
+      <span class="cert-badge-label"><i class="fas fa-check-circle"></i> Verified</span>
+    </div>
   </a>
 
-  <a class="cert-card" href="https://www.credential.net/b26d244a-ae9a-47fc-bbf1-06f86bdac127" target="_blank" rel="noopener" title="CRTP">
-    <div class="cert-img-wrap">
-      <i class="fas fa-shield-alt cert-img-placeholder"></i>
+  <a class="cert-card" href="https://www.credential.net/b26d244a-ae9a-47fc-bbf1-06f86bdac127" target="_blank" rel="noopener">
+    <div class="cert-preview">
+      <img src="/assets/img/certs/CRTP.png" alt="CRTP Certificate" loading="lazy">
+      <div class="cert-overlay"><span><i class="fas fa-external-link-alt"></i> Verify</span></div>
     </div>
-    <div class="cert-name">CRTP</div>
-    <div class="cert-issuer">Altered Security</div>
-    <span class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</span>
+    <div class="cert-footer">
+      <div>
+        <div class="cert-name">CRTP</div>
+        <div class="cert-issuer">Altered Security</div>
+      </div>
+      <span class="cert-badge-label"><i class="fas fa-check-circle"></i> Verified</span>
+    </div>
   </a>
 
-  <a class="cert-card" href="https://www.credential.net/3a82f4b5-4d53-40eb-8264-0314a8a6cfcd" target="_blank" rel="noopener" title="eJPT">
-    <div class="cert-img-wrap">
-      <i class="fas fa-shield-alt cert-img-placeholder"></i>
+  <a class="cert-card" href="https://www.credential.net/3a82f4b5-4d53-40eb-8264-0314a8a6cfcd" target="_blank" rel="noopener">
+    <div class="cert-preview">
+      <img src="/assets/img/certs/eJPT.png" alt="eJPT Certificate" loading="lazy">
+      <div class="cert-overlay"><span><i class="fas fa-external-link-alt"></i> Verify</span></div>
     </div>
-    <div class="cert-name">eJPT</div>
-    <div class="cert-issuer">INE Security</div>
-    <span class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</span>
+    <div class="cert-footer">
+      <div>
+        <div class="cert-name">eJPT</div>
+        <div class="cert-issuer">INE Security</div>
+      </div>
+      <span class="cert-badge-label"><i class="fas fa-check-circle"></i> Verified</span>
+    </div>
   </a>
 
 </div>
