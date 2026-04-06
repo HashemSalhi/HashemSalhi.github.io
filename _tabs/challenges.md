@@ -31,7 +31,7 @@ order: 4
   gap: 0.5rem;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 .challenge-badges .badge {
   font-size: 0.78rem;
@@ -43,33 +43,21 @@ order: 4
 .badge-medium { background-color: #e67e22; color: #fff; }
 .badge-hard { background-color: #e74c3c; color: #fff; }
 .badge-category { background-color: var(--badge-color, #6c757d); color: #fff; }
-.badge-solves {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3em;
-  font-size: 0.78rem;
-  font-weight: 500;
-  padding: 0.3em 0.65em;
-  border-radius: 0.4rem;
-  background-color: rgba(100, 149, 237, 0.15);
-  color: var(--link-color, #6495ed);
-  border: 1px solid rgba(100, 149, 237, 0.3);
-}
-.challenge-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-top: 0.4rem;
-}
 .star-rating {
   display: inline-flex;
-  gap: 0.1em;
+  align-items: center;
+  gap: 0.15em;
   font-size: 0.85rem;
-  line-height: 1;
 }
 .star-rating .star-filled { color: #f1c40f; }
+.star-rating .star-half   { color: #f1c40f; }
 .star-rating .star-empty  { color: rgba(134, 140, 151, 0.4); }
+.star-rating .star-score  {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted, #868c97);
+  margin-left: 0.2em;
+}
 .challenge-link {
   flex-shrink: 0;
 }
@@ -106,16 +94,14 @@ Challenges I've authored on [HackTheBox](https://www.hackthebox.com){:target="_b
       <span class="badge badge-medium">Medium</span>
       <span class="badge badge-category">Hardware</span>
     </div>
-    <div class="challenge-meta">
-      <span class="badge-solves"><i class="fas fa-users"></i> 167 Solves</span>
-      <span class="star-rating">
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-empty"></i>
-      </span>
-    </div>
+    <span class="star-rating">
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star-half-alt star-half"></i>
+      <span class="star-score">4.9</span>
+    </span>
   </div>
   <div class="challenge-link">
     <a href="https://app.hackthebox.com/challenges/Defusal" target="_blank" rel="noopener">
@@ -131,16 +117,14 @@ Challenges I've authored on [HackTheBox](https://www.hackthebox.com){:target="_b
       <span class="badge badge-easy">Easy</span>
       <span class="badge badge-category">Reverse Engineering</span>
     </div>
-    <div class="challenge-meta">
-      <span class="badge-solves"><i class="fas fa-users"></i> 312 Solves</span>
-      <span class="star-rating">
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-filled"></i>
-      </span>
-    </div>
+    <span class="star-rating">
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star star-empty"></i>
+      <span class="star-score">4.1</span>
+    </span>
   </div>
   <div class="challenge-link">
     <a href="https://app.hackthebox.com/challenges/Hubbub" target="_blank" rel="noopener">
@@ -156,16 +140,14 @@ Challenges I've authored on [HackTheBox](https://www.hackthebox.com){:target="_b
       <span class="badge badge-medium">Medium</span>
       <span class="badge badge-category">DFIR Sherlock</span>
     </div>
-    <div class="challenge-meta">
-      <span class="badge-solves"><i class="fas fa-users"></i> 89 Solves</span>
-      <span class="star-rating">
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-filled"></i>
-        <i class="fas fa-star star-empty"></i>
-      </span>
-    </div>
+    <span class="star-rating">
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star star-filled"></i>
+      <i class="fas fa-star-half-alt star-half"></i>
+      <span class="star-score">4.5</span>
+    </span>
   </div>
   <div class="challenge-link">
     <a href="https://app.hackthebox.com/sherlocks/CrewCrow" target="_blank" rel="noopener">
