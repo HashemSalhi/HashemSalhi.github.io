@@ -192,6 +192,24 @@ order: 4
   </div>
 </div>
 
+<div class="challenge-card medium">
+  <div class="challenge-body">
+    <div class="challenge-icon"><i class="fas fa-microchip"></i></div>
+    <div class="challenge-info">
+      <h3>Plug &amp; Pray</h3>
+      <div class="challenge-badges">
+        <span class="badge badge-medium">Medium</span>
+        <span class="badge badge-category">Hardware</span>
+      </div>
+    </div>
+  </div>
+  <div class="challenge-link">
+    <a href="https://app.hackthebox.com/challenges/plug--pray" target="_blank" rel="noopener">
+      <i class="fas fa-external-link-alt"></i> View on HTB
+    </a>
+  </div>
+</div>
+
 <div class="challenge-card easy">
   <div class="challenge-body">
     <div class="challenge-icon"><i class="fas fa-gears"></i></div>
